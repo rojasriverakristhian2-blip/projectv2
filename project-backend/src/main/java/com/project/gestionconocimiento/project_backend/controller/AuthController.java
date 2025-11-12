@@ -7,7 +7,6 @@ import com.project.gestionconocimiento.project_backend.service.AuthService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 
     private final AuthService authService;

@@ -16,7 +16,6 @@ import org.springframework.http.MediaType;
 
 @RestController
 @RequestMapping("/api/reuniones")
-@CrossOrigin(origins = "*")
 public class ReunionController {
 
     @Autowired
