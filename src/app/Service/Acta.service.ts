@@ -11,7 +11,7 @@ export interface interActa {
 
 @Injectable({ providedIn: 'root' })
 export class ActaService {
-  private apiUrl = `${environment.apiUrl}/actas`; // ← Usando variable de entorno para el backend
+  private apiUrl = `${environment.apiUrl}/api/actas`; // ← Usando variable de entorno para el backend
 
   constructor(private http: HttpClient) { }
 

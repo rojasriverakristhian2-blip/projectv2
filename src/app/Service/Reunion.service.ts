@@ -10,7 +10,7 @@ export interface interReunion {
 
 @Injectable({ providedIn: 'root' })
 export class ReunionService {
-  private apiUrl = `${environment.apiUrl}/reuniones`; // ← Usando variable de entorno para el backend
+  private apiUrl = `${environment.apiUrl}/api/reuniones`; // ← Usando variable de entorno para el backend
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@ export interface interAsistencia {
 
 @Injectable({ providedIn: 'root' })
 export class AsistenciaService {
-  private apiUrl = `${environment.apiUrl}/asistencias`; // ← Usando variable de entorno para el backend
+  private apiUrl = `${environment.apiUrl}/api/asistencias`; // ← Usando variable de entorno para el backend
 
   constructor(private http: HttpClient) { }
 

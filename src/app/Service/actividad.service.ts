@@ -11,7 +11,7 @@ export interface interActividad {
 
 @Injectable({ providedIn: 'root' })
 export class ActividadService {
-  private apiUrl = `${environment.apiUrl}/actividades`; // ← Usando variable de entorno para el backend
+  private apiUrl = `${environment.apiUrl}/api/actividades`; // ← Usando variable de entorno para el backend
 
   constructor(private http: HttpClient) { }
 
