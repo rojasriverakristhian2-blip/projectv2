@@ -1,0 +1,16 @@
+<div class="container mt-3">
+    <h4 class="mb-3 text-center">Detalles de la Reunión</h4>
+  
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <p><strong>Lugar:</strong> {{ reunion.reunionLugar }}</p>
+        <p><strong>Descripción:</strong></p>
+        <p class="text-muted">{{ reunion.reunionDescripcion }}</p>
+      </div>
+    </div>
+  
+    <div class="text-center mt-3">
+      <button class="btn btn-secondary" (click)="cerrar()">Cerrar</button>
+    </div>
+  </div>
+

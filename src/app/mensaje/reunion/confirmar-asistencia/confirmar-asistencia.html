@@ -1,0 +1,31 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="confirmar-asistencia.css" />
+
+<div class="container mt-4">
+    <h4 class="mb-3 text-center">Confirmar Asistencia a la Reunión</h4>
+    
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <p><strong>Lugar:</strong> {{ reunion.reunionLugar }}</p>
+        <p><strong>Descripción:</strong> {{ reunion.reunionDescripcion }}</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Número de Cédula</label>
+        <input type="number" class="form-control" [(ngModel)]="cedula" name="cedula"
+            placeholder="Ingresa tu número de cédula" />
+        <small class="form-text text-muted">Debes estar registrado en el sistema como residente</small>
+    </div>
+
+    <div class="form-actions d-flex gap-2 justify-content-end">
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">
+            Cancelar
+        </button>
+        <button type="button" class="btn btn-success" (click)="confirmar()">
+            Confirmar Asistencia
+        </button>
+    </div>
+</div>
+

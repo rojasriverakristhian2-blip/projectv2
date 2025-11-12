@@ -1,0 +1,39 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="add-reunion.css" />
+
+<div class="container mt-4">
+    <div class="d-flex gap-3 flex-column">
+        <!-- Código -->
+        <div class="mb-3 col-md-2">
+            <label class="form-label">Código</label>
+            <input type="number" class="form-control" [(ngModel)]="nuevaReunion.reunionID" name="codigo"
+                placeholder="#" />
+        </div>
+
+        <!-- Lugar -->
+        <div class="mb-3">
+            <label class="form-label">Lugar</label>
+            <input type="text" class="form-control" [(ngModel)]="nuevaReunion.reunionLugar" name="lugar"
+                placeholder="Ingresa el lugar de la reunión" />
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea class="form-control" [(ngModel)]="nuevaReunion.reunionDescripcion" name="descripcion" rows="4"
+                placeholder="Describe la reunión..."></textarea>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-actions d-flex gap-2">
+            <button type="button" class="btn btn-primary btn-save" (click)="guardarReunion()">
+                Guardar
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="cancelar()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="login-container">
+  <h2>Iniciar Sesión - Junta de Acción Comunal</h2>
+
+  <div class="login-card">
+    <label>Correo:</label>
+    <input type="email" placeholder="Ingrese su correo" [(ngModel)]="correo">
+
+    <label>Contraseña:</label>
+    <input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="contrasena">
+
+    <label>Rol:</label>
+    <select [(ngModel)]="rol">
+      <option value="presidente">Presidente</option>
+      <option value="residente">Residente</option>
+    </select>
+
+    <button (click)="login()">Ingresar</button>
+
+    <p class="mensaje" [ngClass]="{'ok': mensaje.includes('concedido'), 'error': mensaje.includes('denegado')}">
+      {{ mensaje }}
+    </p>
+  </div>
+</div>

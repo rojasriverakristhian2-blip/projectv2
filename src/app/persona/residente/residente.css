@@ -1,0 +1,260 @@
+.dashboard {
+  padding: 20px !important;
+  font-size: 1 rem; /* reduce un poco todos los textos */
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #00347a, #004aad);
+  color: white;
+  padding: 18px 22px;
+  border-radius: 10px;
+}
+
+.title h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.subtitle {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.greeting {
+  text-align: right;
+}
+
+.greeting .welcome {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.greeting .name {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.header-actions {
+  margin-left: 16px;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+.info-panel {
+  margin-top: 18px;
+  padding: 0;
+  /* card contains padding */
+}
+
+/* Page title above the white card (large blue title like the image) */
+.page-title {
+  color: #004aad;
+  /* match presidente accent */
+  font-size: 1.8rem;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.white-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+  border: 1px solid rgba(16, 24, 40, 0.04);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .messages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.message-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.04);
+}
+
+/* Sub-panel under the title to visually separate summary from white card */
+.sub-panel {
+  background: rgba(0, 68, 173, 0.06);
+  /* pale blue tint related to presidente blue */
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border: 1px solid rgba(0, 68, 173, 0.08);
+}
+
+.sub-panel-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.sub-panel .summary {
+  font-weight: 600;
+  color: #023057;
+  /* darkish blue for contrast */
+}
+
+.sub-panel .note {
+  color: #35556a;
+  font-size: 0.9rem;
+}
+
+.message-card h4 {
+  margin: 0 0 8px 0;
+  color: #004aad;
+}
+
+.message-card p {
+  margin: 0 0 8px 0;
+  color: #293243;
+}
+
+.muted {
+  color: #6c757d;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #6c757d;
+  color: #fff;
+}
+
+/* removed duplicate/legacy styles to avoid conflicts; new styles above are used */
+
+.parent {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 6; }
+.div2 { grid-area: 2 / 1 / 6 / 2; }
+.div3 { grid-area: 2 / 2 / 3 / 4; }
+
+.carrusel-texto {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f5f0;
+  border: 2px solid #e8e2d6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  padding: 10px 0;
+  position: relative;
+}
+
+.carrusel-track {
+  display: inline-flex;
+  animation: scroll 5s linear infinite;
+}
+
+.carrusel-item {
+  display: inline-block;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5d4037;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 2rem;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Opcional: pausa al pasar el ratón */
+.carrusel-texto:hover .carrusel-track {
+  animation-play-state: paused;
+}
+
+.info-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+  max-width: 400px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+
+

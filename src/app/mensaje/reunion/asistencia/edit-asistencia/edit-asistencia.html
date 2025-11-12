@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="d-flex gap-3 flex-column">
+  
+      <!-- Código (solo lectura) -->
+      <div class="mb-3 col-md-2">
+        <label for="codigo" class="form-label">Código</label>
+        <input type="text" id="codigo" class="form-control" [(ngModel)]="asistencia.asistenciaID" disabled>
+      </div>
+  
+      <!-- Participantes -->
+      <div class="mb-3">
+        <label for="participantesAsistencia" class="form-label">Participantes</label>
+        <textarea id="participantesAsistencia" class="form-control"
+          [(ngModel)]="asistencia.asistenciaParticipantes" rows="6"
+          placeholder="Lista los participantes que confirmaron su asistencia..."></textarea>
+      </div>
+  
+      <!-- Botones -->
+      <div class="form-actions d-flex justify-content-end gap-2">
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-primary btn-save" (click)="guardarCambios()">Guardar</button>
+      </div>
+    </div>
+  </div>
+

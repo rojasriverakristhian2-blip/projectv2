@@ -1,0 +1,29 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<div class="dashboard">
+  <header class="top-panel">
+    <div class="title">
+      <h2>Panel del Presidente</h2>
+      <p><strong>Junta:</strong> Junta de Acción Comunal Torres — Zona Norte</p>
+    </div>
+
+    <div class="header-actions">
+      <button type="button" class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+  </header>
+
+  <section class="actions">
+    <h3>Gestionar Reuniones</h3>
+    <button mat-raised-button color="primary" (click)="flotanteReunion()">Crear/Ver Reuniones</button>
+    <div class="card-container">
+    </div>
+  </section>
+
+  <section class="actions">
+    <h3>Enviar información a los residentes</h3>
+    <button mat-raised-button color="primary" (click)="flotanteActividad()">Gestionar Actividad</button>
+    <div class="card-container">
+    </div>
+  </section>
+</div>

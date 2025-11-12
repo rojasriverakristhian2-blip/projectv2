@@ -1,0 +1,32 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="add-acta.css" />
+
+<div class="container mt-4">
+    <div class="d-flex gap-3 flex-column">
+        <!-- Fila 1: Código -->
+        <div class="mb-3 col-md-2">
+            <label class="form-label">Código</label>
+            <input type="number" class="form-control" [(ngModel)]="nuevaActa.actaID" name="codigo"
+                placeholder="#" />
+        </div>
+
+        <!-- Fila 2: Campo de decisión -->
+        <div class="mb-3">
+            <label class="form-label">Decisión</label>
+            <textarea class="form-control" [(ngModel)]="nuevaActa.actaDesicion" name="desicion" rows="6"
+                placeholder="Registra las decisiones tomadas en la reunión..."></textarea>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-actions d-flex gap-2">
+            <button type="button" class="btn btn-primary btn-save" (click)="guardarActa()">
+                Guardar
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="cancelar()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="add-actividad.css" />
+
+<div class="container mt-4">
+    <div class="d-flex gap-3 flex-column">
+        <!-- Fila 1: Código y Nombre -->
+        <div class="d-flex gap-3 flex-md-row flex-column">
+            <div class="mb-3 col-md-2">
+                <label class="form-label">Código</label>
+                <input type="number" class="form-control" [(ngModel)]="nuevaActividad.actividadID" name="codigo"
+                    placeholder="#" />
+            </div>
+            <div class="mb-3 flex-grow-1">
+                <label class="form-label">Nombre de la actividad</label>
+                <input type="text" class="form-control" [(ngModel)]="nuevaActividad.actividadNombre" name="nombre"
+                    placeholder="Ingresa el nombre de la actividad" />
+            </div>
+        </div>
+
+        <!-- Fila 2: Campo de fecha -->
+        <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input type="date" class="form-control" [(ngModel)]="nuevaActividad.actividadFecha" name="fecha" />
+        </div>
+
+        <!-- Fila 3: Campo de descripción -->
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea class="form-control" [(ngModel)]="nuevaActividad.actividadDescripcion" name="descripcion" rows="4"
+                placeholder="Describe la actividad..."></textarea>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-actions d-flex gap-2">
+            <button type="button" class="btn btn-primary btn-save" (click)="guardarActividad()">
+                Guardar
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="cancelar()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>

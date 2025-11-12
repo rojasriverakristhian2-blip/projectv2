@@ -1,0 +1,19 @@
+spring:
+  sql:
+    init:
+      mode: always
+  jpa: 
+    defer-datasource-initialization: true   
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+   
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/gestionconocimiento?useSSL=false&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:admin}
+
+# Configuración CORS (puede ser sobrescrita por variable de entorno)
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:*}

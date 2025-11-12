@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+}
+
+.reuniones-list {
+    max-width: 900px;
+}
+
+.reunion-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.reunion-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+

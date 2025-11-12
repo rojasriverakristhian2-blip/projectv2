@@ -1,0 +1,287 @@
+@prefix :     <http://www.semanticweb.org/sebastiandiaz/ontologies/2025/9/untitled-ontology-13/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+:InformeDescripcion  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Informe;
+        rdfs:range   xsd:string .
+
+:InformacionImportanteDescripcion
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :InformacionImportante;
+        rdfs:range   xsd:string .
+
+:Actividad1  rdf:type          owl:NamedIndividual , :Actividad;
+        :ActividadDescripcion  "asssssssssssssss";
+        :ActividadFecha        "2025-11-16";
+        :ActividadID           "1";
+        :ActividadNombre       "María González" .
+
+:InformacionImportanteID
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :InformacionImportante;
+        rdfs:range   xsd:int .
+
+:Mensaje2  rdf:type                   owl:NamedIndividual , :InformacionImportante;
+        :InformacionImportanteDescripcion
+                "Se le informa a la comunidad que el servicio del agua va a estar temporalmente inhabilitado la proxima semana según SERVAF";
+        :InformacionImportanteID      201;
+        :InformacionImportanteTitulo  "Servicio de agua" .
+
+:InformacionImportante
+        rdf:type         owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:InformeID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Informe;
+        rdfs:range   xsd:int .
+
+:Actividad7  rdf:type          owl:NamedIndividual , :Actividad;
+        :ActividadDescripcion  "asdasdsad";
+        :ActividadFecha        "2025-11-16";
+        :ActividadID           "7";
+        :ActividadNombre       "asdasd" .
+
+:ActividadFecha  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Actividad;
+        rdfs:range   xsd:dateTime .
+
+:ActividadNombre  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Actividad;
+        rdfs:range   xsd:string .
+
+:Mensaje  rdf:type       owl:Class;
+        rdfs:subClassOf  :JuntaAccionComunal .
+
+:Reunion1  rdf:type              owl:NamedIndividual , :Reunion;
+        :ReunionDescripcion      "aaaaaaaaaaaaaaaaaaaaaaa";
+        :ReunionID               "1"^^xsd:int;
+        :ReunionLugar            "reunion de prueba";
+        :reunionTieneActa        :Acta1;
+        :reunionTieneAsistencia  :Asistencia1 .
+
+:PlanAccionID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :PlanAccion;
+        rdfs:range   xsd:int .
+
+:PlanDesarrollo  rdf:type  owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:ActaDesicion  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Acta;
+        rdfs:range   xsd:string .
+
+:Acta   rdf:type         owl:Class;
+        rdfs:subClassOf  :Reunion .
+
+:recibeInformacion  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Residente;
+        rdfs:range   :Mensaje .
+
+:Actividad2  rdf:type          owl:NamedIndividual , :Actividad;
+        :ActividadDescripcion  "sadasdasd";
+        :ActividadFecha        "2025-11-21";
+        :ActividadID           "2";
+        :ActividadNombre       "kristhiam" .
+
+:reunionTieneActa  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Reunion;
+        rdfs:range   :Acta .
+
+:Residente  rdf:type     owl:Class;
+        rdfs:subClassOf  :Persona .
+
+:Mensaje3  rdf:type          owl:NamedIndividual , :Informe;
+        :InformeDescripcion  "En la reunion hecha el dia 24 de octubre del 2025 se llevó a cabo una asamblea para tener una lista de los principales problemas que ha tenido la comunidad con respecto al barrio, entre ellas ha estado el servicio de la energia muy malo, y los ruidos excesivos por parte de los vecinos";
+        :InformeFecha        "2025-10-25T00:00:00"^^xsd:dateTime;
+        :InformeID           301 .
+
+:ActividadDescripcion
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :Actividad;
+        rdfs:range   xsd:string .
+
+:PersonaID  rdf:type  owl:DatatypeProperty , owl:FunctionalProperty;
+        rdfs:domain  :Persona;
+        rdfs:range   xsd:int .
+
+:Asistencia1  rdf:type            owl:NamedIndividual , :Asistencia;
+        :AsistenciaID             "1"^^xsd:int;
+        :AsistenciaParticipantes  "Lista de participantes - Pendiente de confirmación" .
+
+:AsistenciaID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Asistencia;
+        rdfs:range   xsd:int .
+
+:JuntaAccionComunalZona
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :JuntaAccionComunal;
+        rdfs:range   xsd:string .
+
+:Presidente  rdf:type    owl:Class;
+        rdfs:subClassOf  :Persona .
+
+:perteneceJuntaAccionComunal
+        rdf:type     owl:ObjectProperty;
+        rdfs:domain  :Persona;
+        rdfs:range   :JuntaAccionComunal .
+
+:AsistenciaParticipantes
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :Asistencia;
+        rdfs:range   xsd:string .
+
+:PlanDesarrolloTitulo
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :PlanDesarrollo;
+        rdfs:range   xsd:string .
+
+:Acta1  rdf:type       owl:NamedIndividual , :Acta;
+        :ActaDesicion  "Acta de la reunión - Pendiente de llenar";
+        :ActaID        "1"^^xsd:int .
+
+:Actividad  rdf:type     owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:Actividad3  rdf:type          owl:NamedIndividual , :Actividad;
+        :ActividadDescripcion  "asdasdads";
+        :ActividadFecha        "2025-11-21";
+        :ActividadID           "3";
+        :ActividadNombre       "asdasd" .
+
+:PlanDesarrolloID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :PlanDesarrollo;
+        rdfs:range   xsd:int .
+
+:Mensaje4  rdf:type          owl:NamedIndividual , :Reunion;
+        :ReunionDescripcion  "Se hace el llamado a la comunidad para asistir a la reunión el dia 4 de octubre del 2025, en donde se llevara a cabo una charla para conocer los problemas que se presentan en el barrio.";
+        :ReunionID           401;
+        :ReunionLugar        "Caseta comunal del barrio" .
+
+:JuntaAccionComunal  rdf:type      owl:Class , owl:NamedIndividual , :JuntaAccionComunal;
+        :JuntaAccionComunalNombre  "Junta de acción comunal Torres";
+        :JuntaAccionComunalZona    "Zona Norte" .
+
+:PlanAccionDescripcion
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :PlanAccion;
+        rdfs:range   xsd:string .
+
+:PlanDesarrolloDescripcion
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :PlanDesarrollo;
+        rdfs:range   xsd:string .
+
+:PersonaRol  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Persona;
+        rdfs:range   xsd:string .
+
+<http://www.semanticweb.org/sebastiandiaz/ontologies/2025/9/untitled-ontology-13>
+        rdf:type  owl:Ontology .
+
+:actividadTieneResponsable
+        rdf:type       owl:ObjectProperty;
+        rdfs:domain    :Actividad;
+        rdfs:label     "Responsable de la actividad";
+        rdfs:range     :Persona;
+        owl:inverseOf  :personaEsResponsableDe .
+
+:personaEsResponsableDe
+        rdf:type     owl:ObjectProperty;
+        rdfs:domain  :Persona;
+        rdfs:range   :Actividad .
+
+:InformeFecha  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Informe;
+        rdfs:range   xsd:dateTime .
+
+:Informe  rdf:type       owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:InformacionImportanteTitulo
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :InformacionImportante;
+        rdfs:range   xsd:string .
+
+:Mensaje5  rdf:type             owl:NamedIndividual , :PlanAccion;
+        :PlanAccionDescripcion  "Este plan tiene como objetivo principal mejorar las zonas verdes, promover la participación comunitaria y fortalecer la seguridad del barrio durante el año 2025.";
+        :PlanAccionID           501;
+        :PlanAccionTitulo       "Plan de acción 2025 - Mejoramiento del entorno barrial" .
+
+:ActaID  rdf:type    owl:DatatypeProperty;
+        rdfs:domain  :Acta;
+        rdfs:range   xsd:int .
+
+:PlanAccionTitulo  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :PlanAccion;
+        rdfs:range   xsd:string .
+
+:Persona  rdf:type       owl:Class;
+        rdfs:subClassOf  :JuntaAccionComunal .
+
+:descripcionInformacion
+        rdf:type     owl:ObjectProperty;
+        rdfs:domain  :Mensaje;
+        rdfs:range   :Actividad , :InformacionImportante , :Informe , :PlanAccion , :PlanDesarrollo , :Reunion .
+
+:reunionTieneAsistencia
+        rdf:type     owl:ObjectProperty;
+        rdfs:domain  :Reunion;
+        rdfs:range   :Asistencia .
+
+:Mensaje6  rdf:type                 owl:NamedIndividual , :PlanDesarrollo;
+        :PlanDesarrolloDescripcion  "Incluye proyectos de infraestructura, programas sociales, culturales y ambientales para mejorar la calidad de vida de los residentes del barrio San José entre los años 2025 y 2028.";
+        :PlanDesarrolloID           601;
+        :PlanDesarrolloTitulo       "Plan de desarrollo comunitario 2025–2028" .
+
+:PersonaNombre  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Persona;
+        rdfs:range   xsd:string .
+
+:JuntaAccionComunalNombre
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :JuntaAccionComunal;
+        rdfs:range   xsd:string .
+
+:ActividadID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Actividad;
+        rdfs:range   xsd:int .
+
+:ReunionDescripcion  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Reunion;
+        rdfs:range   xsd:string .
+
+:PlanAccion  rdf:type    owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:presidenteJuntaAccionComunal
+        rdf:type        owl:NamedIndividual , :Presidente;
+        :PersonaID      100001;
+        :PersonaNombre  "Juan" .
+
+:Reunion  rdf:type       owl:Class;
+        rdfs:subClassOf  :Mensaje .
+
+:Acta401  :ActaDesicion  "No confirmados: Camila Torres, Carlos Martínez, Mariana Herrera, Felipe Castro, Daniela Gómez, Juan Esteban Rojas, Natalia Sánchez" .
+
+:divulgaMensaje  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Presidente;
+        rdfs:range   :Mensaje .
+
+:ReunionID  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Reunion;
+        rdfs:range   xsd:int .
+
+:Asistencia  rdf:type    owl:Class;
+        rdfs:subClassOf  :Reunion .
+
+:Residente1  rdf:type   owl:NamedIndividual , :Residente;
+        :PersonaID      10002;
+        :PersonaNombre  "Carlos" .
+
+:ReunionLugar  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Reunion;
+        rdfs:range   xsd:string .

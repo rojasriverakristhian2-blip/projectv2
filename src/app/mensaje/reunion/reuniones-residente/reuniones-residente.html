@@ -1,0 +1,29 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="reuniones-residente.css" />
+
+<div class="container mt-4">
+    <h3 class="mb-4">Reuniones Disponibles</h3>
+
+    <div class="reuniones-list">
+        @for (reunion of reuniones; track reunion.reunionID) {
+        <div class="card reunion-card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Reunión #{{ reunion.reunionID }}</h5>
+                <p class="card-text"><strong>Lugar:</strong> {{ reunion.reunionLugar }}</p>
+                <p class="card-text">{{ reunion.reunionDescripcion }}</p>
+                <button type="button" class="btn btn-primary" (click)="confirmarAsistencia(reunion)">
+                    Confirmar Asistencia
+                </button>
+            </div>
+        </div>
+        }
+        
+        @if (reuniones.length === 0) {
+        <div class="alert alert-info">
+            No hay reuniones disponibles en este momento.
+        </div>
+        }
+    </div>
+</div>
+

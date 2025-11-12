@@ -1,0 +1,11 @@
+{
+  "properties": [
+    {
+      "name": "app.cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "Lista de orígenes permitidos para CORS, separados por comas.",
+      "defaultValue": "http://localhost:4200,http://localhost:80"
+    }
+  ]
+}
+
